@@ -2,39 +2,24 @@
 using namespace std;
 int main()
 {
-    long long int count_len, count_bre, n, m, a;
-    cin >> n >> m >> a;
-    count_len = 0;
-    count_bre = 0;
-    long long int temp = a;
-    while (temp < n)
+    long long m, n, a, x, y;
+    cin >> m >> n >> a;
+    if (m % a == 0)
     {
-
-        count_len += 1;
-        temp = temp + a;
+        x = m / a;
     }
-    if (n != (temp / 2))
+    else
     {
-        count_len += 1;
+        x = m / a + 1;
     }
-    temp = a;
-    while (temp < m)
+    if (n % a == 0)
     {
-
-        count_bre += 1;
-        temp = temp + a;
+        y = n / a;
     }
-    if (m != (temp / 2))
+    else
     {
-        count_bre += 1;
+        y = n / a + 1;
     }
-    if (count_len == 0)
-    {
-        count_len = 1;
-    }
-    if (count_bre == 0)
-    {
-        count_bre = 1;
-    }
-    cout << count_len * count_bre;
+    cout << x * y << endl;
+    return 0;
 }
